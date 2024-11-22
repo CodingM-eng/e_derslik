@@ -12,7 +12,7 @@ body {
     padding: 20px;
 }
 
-h1, h2 {
+h1, h2, h3 {
     color: #333;
 }
 
@@ -39,7 +39,21 @@ button:hover {
     background-color: #4cae4c;
 }
 
-#user-list {
+table {
+    width: 100%;
+    border-collapse: collapse;
     margin-top: 20px;
-    text-align: left;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 10px;
+    text-align: center;
+}
+
+thead {
+    background-color: #f2f2f2;
 }
