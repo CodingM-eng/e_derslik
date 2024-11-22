@@ -24,6 +24,30 @@ loginBtn.addEventListener('click', () => {
         alert('Неверный email или пароль');
     }
 });
+// Firebase örneği ile kullanıcı kaydetme
+import { getDatabase, ref, set } from "firebase/database";
+
+function saveUser(user) {
+    const db = getDatabase();
+    set(ref(db, 'users/' + user.id), user)
+        .then(() => alert('Kullanıcı kaydedildi!'))
+        .catch(error => alert('Hata: ' + error.message));
+}
+const accountSid = 'YOUR_TWILIO_ACCOUNT_SID';
+const authToken = 'YOUR_TWILIO_AUTH_TOKEN';
+const client = require('twilio')(accountSid, authToken);
+
+function sendSms(phoneNumber, code) {
+    client.messages
+        .create({
+            body: `Ваш код подтверждения: ${code}`,
+            from: '+1234567890', // Twilio telefon numarası
+            to: phoneNumber
+        })
+        .then(message => console.log(message.sid))
+        .catch(error => console.error(error));
+}
+
 
 // Kullanıcı listesi güncelleme
 function updateUserList() {
