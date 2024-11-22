@@ -34,6 +34,30 @@ function updateUserList() {
         userList.appendChild(userDiv);
     });
 }
+// Örnek öğretmen verileri
+const teacherData = [
+    { day: '2024-11-22', subject: 'Математика', grade: 5 },
+    { day: '2024-11-23', subject: 'Физика', grade: 4 }
+];
+
+// Tabloyu güncelleyen fonksiyon
+function updateTeacherTable() {
+    const tableBody = document.getElementById('teacher-table-body');
+    tableBody.innerHTML = ''; // Eski verileri temizle
+    teacherData.forEach(entry => {
+        const row = document.createElement('tr');
+        row.innerHTML = `
+            <td>${entry.day}</td>
+            <td>${entry.subject}</td>
+            <td>${entry.grade}</td>
+        `;
+        tableBody.appendChild(row);
+    });
+}
+
+// Fonksiyonu çağırarak tabloyu güncelle
+updateTeacherTable();
+
 
 // Yeni öğretmen ekleme
 addTeacherBtn.addEventListener('click', () => {
