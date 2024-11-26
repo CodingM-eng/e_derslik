@@ -3,45 +3,72 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Электронная доска</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Подарок для Учителя!</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
 </head>
 <body>
-    <div class="container">
-        <h1>Электронная доска</h1>
-
-        <!-- Giriş Formu -->
-        <div class="login-form">
-            <h2>Войти</h2>
-            <label for="email">Эл. почта</label>
-            <input type="email" id="email" placeholder="Введите вашу почту">
-            <label for="password">Пароль</label>
-            <input type="password" id="password" placeholder="Введите ваш пароль">
-            <button id="login-btn">Войти</button>
+    <header class="header">
+        <div class="container">
+            <h1 id="site-title">Подарок для Учителя!</h1>
+            <nav>
+                <ul class="nav">
+                    <li><a href="#about" id="nav-about">О Нас</a></li>
+                    <li><a href="#services" id="nav-services">Услуги</a></li>
+                    <li><a href="#contact" id="nav-contact">Контакты</a></li>
+                </ul>
+            </nav>
+            <div class="language-switcher">
+                <button data-lang="az">AZ</button>
+                <button data-lang="ru">RU</button>
+                <button data-lang="en">EN</button>
+            </div>
         </div>
+    </header>
 
-        <!-- Yönetim Paneli -->
-        <div class="dashboard" style="display: none;">
-            <h2>Панель управления</h2>
-            <button id="add-teacher-btn">Добавить учителя</button>
-            <button id="add-student-btn">Добавить студента</button>
-
-            <h3>Учительская таблица</h3>
-            <table>
-                <thead>
-                    <tr>
-                        <th>День</th>
-                        <th>Уроки</th>
-                        <th>Оценка</th>
-                    </tr>
-                </thead>
-                <tbody id="teacher-table-body">
-                    <!-- Dinamik veri buraya eklenecek -->
-                </tbody>
-            </table>
+    <section id="about" class="about">
+        <div class="container">
+            <h2 id="about-title">О Нас</h2>
+            <p id="about-text">Это демо-сайт, посвященный подаркам для учителей. Здесь вы найдете лучшие идеи и решения.</p>
         </div>
-    </div>
+    </section>
 
-    <script src="script.js"></script>
+    <section id="services" class="services">
+        <div class="container">
+            <h2 id="services-title">Наши Услуги</h2>
+            <div class="service-box">
+                <div class="service">
+                    <h3 id="service1-title">Персонализированные Подарки</h3>
+                    <p id="service1-text">Создавайте уникальные подарки для учителей.</p>
+                </div>
+                <div class="service">
+                    <h3 id="service2-title">Быстрая Доставка</h3>
+                    <p id="service2-text">Оперативная доставка в любой регион.</p>
+                </div>
+                <div class="service">
+                    <h3 id="service3-title">Консультации</h3>
+                    <p id="service3-text">Мы поможем вам выбрать лучший подарок.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 id="contact-title">Контакты</h2>
+            <form>
+                <input type="text" id="contact-name" placeholder="Ваше Имя" required>
+                <input type="email" id="contact-email" placeholder="Ваш Email" required>
+                <textarea id="contact-message" placeholder="Ваше Сообщение" required></textarea>
+                <button type="submit" id="contact-submit">Отправить</button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p id="footer-text">&copy; 2024 Подарок для Учителя! Все права защищены.</p>
+        </div>
+    </footer>
 </body>
 </html>
