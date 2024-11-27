@@ -1,80 +1,135 @@
-const translations = {
-    az: {
-        siteTitle: "Müəllim üçün Hədiyyə!",
-        navAbout: "Haqqımızda",
-        navServices: "Xidmətlər",
-        navContact: "Əlaqə",
-        aboutTitle: "Haqqımızda",
-        aboutText: "Bu sayt müəllimlər üçün hədiyyələrə həsr olunub.",
-        servicesTitle: "Xidmətlərimiz",
-        service1Title: "Fərdi Hədiyyələr",
-        service1Text: "Müəllimlər üçün unikal hədiyyələr hazırlayın.",
-        service2Title: "Tez Çatdırılma",
-        service2Text: "İstənilən bölgəyə operativ çatdırılma.",
-        service3Title: "Məsləhət Xidməti",
-        service3Text: "Ən yaxşı hədiyyəni seçməyiniz üçün kömək edirik.",
-        contactTitle: "Əlaqə",
-        contactSubmit: "Göndər",
-        footerText: "Bütün hüquqlar qorunur."
-    },
-    ru: {
-        siteTitle: "Подарок для Учителя!",
-        navAbout: "О Нас",
-        navServices: "Услуги",
-        navContact: "Контакты",
-        aboutTitle: "О Нас",
-        aboutText: "Это демо-сайт, посвященный подаркам для учителей.",
-        servicesTitle: "Наши Услуги",
-        service1Title: "Персонализированные Подарки",
-        service1Text: "Создавайте уникальные подарки для учителей.",
-        service2Title: "Быстрая Доставка",
-        service2Text: "Оперативная доставка в любой регион.",
-        service3Title: "Консультации",
-        service3Text: "Мы поможем вам выбрать лучший подарок.",
-        contactTitle: "Контакты",
-        contactSubmit: "Отправить",
-        footerText: "Все права защищены."
-    },
-    en: {
-        siteTitle: "Gift for Teacher!",
-        navAbout: "About Us",
-        navServices: "Services",
-        navContact: "Contact",
-        aboutTitle: "About Us",
-        aboutText: "This is a demo site dedicated to teacher gifts.",
-        servicesTitle: "Our Services",
-        service1Title: "Personalized Gifts",
-        service1Text: "Create unique gifts for teachers.",
-        service2Title: "Fast Delivery",
-        service2Text: "Quick delivery to any region.",
-        service3Title: "Consultations",
-        service3Text: "We help you choose the best gift.",
-        contactTitle: "Contact",
-        contactSubmit: "Send",
-        footerText: "All rights reserved."
-    }
-};
+/* Global Styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: #333;
+    line-height: 1.6;
+}
 
-document.querySelectorAll(".language-switcher button").forEach((button) => {
-    button.addEventListener("click", () => {
-        const lang = button.dataset.lang;
-        const t = translations[lang];
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
 
-        document.getElementById("site-title").textContent = t.siteTitle;
-        document.getElementById("nav-about").textContent = t.navAbout;
-        document.getElementById("nav-services").textContent = t.navServices;
-        document.getElementById("nav-contact").textContent = t.navContact;
-        document.getElementById("about-title").textContent = t.aboutTitle;
-        document.getElementById("about-text").textContent = t.aboutText;
-        document.getElementById("services-title").textContent = t.servicesTitle;
-        document.getElementById("service1-title").textContent = t.service1Title;
-        document.getElementById("service1-text").textContent = t.service1Text;
-        document.getElementById("service2-title").textContent = t.service2Title;
-        document.getElementById("service2-text").textContent = t.service2Text;
-        document.getElementById("service3-title").textContent = t.service3Title;
-        document.getElementById("service3-text").textContent = t.service3Text;
-        document.getElementById("contact-title").textContent = t.contactTitle;
-        document.getElementById("contact-submit").textContent = t.contactSubmit;
-        document.getElementById("footer-text").textContent = t.footerText;
-    });
-});
+/* Header Styles */
+.header {
+    background: #2c3e50;
+    color: #fff;
+    padding: 1rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.nav ul li {
+    margin: 0 1rem;
+}
+
+.nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.language-switcher button {
+    background: #fff;
+    color: #2c3e50;
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+}
+
+.language-switcher button:hover {
+    background: #3498db;
+    color: #fff;
+}
+
+/* Hero Section */
+.hero {
+    background: url('hero-bg.jpg') no-repeat center center/cover;
+    color: #fff;
+    text-align: center;
+    padding: 4rem 1rem;
+}
+
+.hero .cta-button {
+    background: #3498db;
+    color: #fff;
+    border: none;
+    padding: 0.8rem 2rem;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+/* About Section */
+.about {
+    padding: 2rem 0;
+    text-align: center;
+}
+
+/* Services Section */
+.services {
+    background: #f4f4f4;
+    padding: 2rem 0;
+}
+
+.service-grid {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.service-item {
+    background: #fff;
+    padding: 1rem;
+    margin: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 30%;
+}
+
+/* Contact Section */
+.contact {
+    padding: 2rem 0;
+    text-align: center;
+}
+
+.contact form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contact form input,
+.contact form textarea {
+    width: 100%;
+    max-width: 400px;
+    margin: 0.5rem 0;
+    padding: 0.8rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.contact form button {
+    background: #3498db;
+    color: #fff;
+    border: none;
+    padding: 0.8rem 2rem;
+    cursor: pointer;
+}
+
+/* Footer */
+.footer {
+    background: #2c3e50;
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+}
